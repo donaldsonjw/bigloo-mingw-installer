@@ -1,9 +1,11 @@
 ; -- bigloo.iss --
 
+#define BIGLOOVERSION "3.8a"
+
 [Setup]
 AppName=Bigloo
-AppVersion=3.8a
-DefaultDirName=c:\bigloo38a
+AppVersion={#BIGLOOVERSION}
+DefaultDirName=c:\bigloo{#BIGLOOVERSION}
 DefaultGroupName=bigloo
 Compression=lzma2
 SolidCompression=yes
@@ -13,23 +15,23 @@ ChangesEnvironment=yes
 
 [Files]
 Source: "bin\*"; DestDir: "{app}\bin"
-Source: "doc\bigloo-3.8a\*"; DestDir: "{app}\doc\bigloo-3.8a"
+Source: "doc\bigloo-{#BIGLOOVERSION}\*"; DestDir: "{app}\doc\bigloo-{#BIGLOOVERSION}"
 Source: "info\*"; DestDir: "{app}\info"
 Source: "lib\*"; DestDir: "{app}\lib"
-Source: "lib\bigloo\3.8a\*"; DestDir: "{app}\lib\bigloo\3.8a"
-Source: "lib\bigloo\3.8a\text\data\*"; DestDir: "{app}\lib\bigloo\3.8a\text\data"
-Source: "man\man1\*"; DestDir: "{app}\man\man1"
+Source: "lib\bigloo\{#BIGLOOVERSION}\*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
+Source: "lib\bigloo\{#BIGLOOVERSION}\text\data\*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}\text\data"
+;Source: "man\man1\*"; DestDir: "{app}\man\man1"
 Source: "C:\MinGW\bin\libgmp-10.dll"; DestDir: "{app}\lib"
 Source: "C:\MinGW\bin\libpcre-0.dll"; DestDir: "{app}\lib"
 Source: "C:\MinGW\bin\libsqlite3-0.dll"; DestDir: "{app}\lib"
-Source: "C:\MinGW\lib\libcrypto.a"; DestDir: "{app}\lib\bigloo\3.8a"
-Source: "C:\MinGW\lib\libssl.a"; DestDir: "{app}\lib\bigloo\3.8a"
-Source: "C:\MinGW\lib\libsqlite3*"; DestDir: "{app}\lib\bigloo\3.8a"
-Source: "C:\MinGW\lib\libpcre*"; DestDir: "{app}\lib\bigloo\3.8a"
-Source: "C:\MinGW\lib\libgmp*"; DestDir: "{app}\lib\bigloo\3.8a"
+Source: "C:\MinGW\lib\libcrypto.a"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
+Source: "C:\MinGW\lib\libssl.a"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
+Source: "C:\MinGW\lib\libsqlite3*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
+Source: "C:\MinGW\lib\libpcre*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
+Source: "C:\MinGW\lib\libgmp*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
 
 [Registry]
-Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; ValueType: expandsz; ValueName: "BIGLOOLIB"; ValueData: "{app}\lib\bigloo\3.8a"; Flags: uninsdeletevalue;
+Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; ValueType: expandsz; ValueName: "BIGLOOLIB"; ValueData: "{app}\lib\bigloo\{#BIGLOOVERSION}"; Flags: uninsdeletevalue;
 
 
 [Tasks]
