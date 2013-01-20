@@ -1,6 +1,6 @@
 ; -- bigloo.iss --
 
-#define BIGLOOVERSION "3.9b"
+#define BIGLOOVERSION "4.0a"
 
 [Setup]
 AppName=Bigloo
@@ -29,6 +29,7 @@ Source: "C:\MinGW\lib\libssl.a"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
 Source: "C:\MinGW\lib\libsqlite3*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
 Source: "C:\MinGW\lib\libpcre*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
 Source: "C:\MinGW\lib\libgmp*"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
+Source: "C:\MinGW\include\gmp.h"; DestDir: "{app}\lib\bigloo\{#BIGLOOVERSION}"
 
 [Registry]
 Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; ValueType: expandsz; ValueName: "BIGLOOLIB"; ValueData: "{app}\lib\bigloo\{#BIGLOOVERSION}"; Flags: uninsdeletevalue;
