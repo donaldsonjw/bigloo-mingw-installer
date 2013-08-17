@@ -1,6 +1,6 @@
 ; -- bigloo.iss --
 
-#define BIGLOOVERSION "4.0a"
+#define BIGLOOVERSION "4.0b"
 
 [Setup]
 AppName=Bigloo
